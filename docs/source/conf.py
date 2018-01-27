@@ -24,43 +24,42 @@
 import os
 import sphinx_rtd_theme
 
+def filter_version_line(item):
+    return isinstance(item, str) and item.startswith('#define _FWP_VERSION_')
+
 def read_version_from_file():
-    major = 0
-    minor = 0
-    patch = 0
-    stage = ''
-    suffx = 0
     path = os.path.dirname(
         os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
     )
     path = os.path.join(path, 'src', 'conf', 'version.h')
     with open(path) as fp:
-        for line in fp:
-            if line.startswith('#define _FWP_VERSION_MAJOR'):
-                major = int(line.split()[2])
-            if line.startswith('#define _FWP_VERSION_MINOR'):
-                minor = int(line.split()[2])
-            if line.startswith('#define _FWP_VERSION_PATCH'):
-                patch = int(line.split()[2])
-            if line.startswith('#define _FWP_VERSION_SUFFX'):
-                suffx = int(line.split()[2])
-            if line.startswith('#define _FWP_VERSION_FLAVOUR'):
-                stage = line.split()[2]
-    return (major, minor, patch, stage, suffx)
+        lines = list(filter(filter_version_line, fp))
+    return lines
+
+def extract_version_tuple():
+    version_list = read_version_from_file()
+    version_dict = dict([item.split()[1:] for item in version_list])
+    return (
+        int(version_dict['_FWP_VERSION_MAJOR']),
+        int(version_dict['_FWP_VERSION_MINOR']),
+        int(version_dict['_FWP_VERSION_PATCH']),
+        str(version_dict['_FWP_VERSION_FLAVOUR']),
+        int(version_dict['_FWP_VERSION_SUFFX']),
+    )
 
 def get_version():
-    version = read_version_from_file()
+    flavours = {
+        '_FWP_DEV': 'dev',
+        '_FWP_ALPHA': 'a{}',
+        '_FWP_BETA': 'b{}',
+        '_FWP_RC': 'rc{}'
+    }
+    version = extract_version_tuple()
     vstring =  '{}.{}'.format(version[0], version[1])
     if version[2] != 0:
         vstring += '.{}'.format(version[2])
-    if version[3] == '_FWP_DEV':
-        vstring += 'dev'
-    if version[3] == '_FWP_ALPHA':
-        vstring += 'a{}'.format(version[4])
-    if version[3] == '_FWP_BETA':
-        vstring += 'b{}'.format(version[4])
-    if version[3] == '_FWP_RC':
-        vstring += 'rc{}'.format(version[4])
+    if version[3] in flavours.keys():
+        vstring += flavours[version[3]].format(version[4])
     return vstring
 
 
