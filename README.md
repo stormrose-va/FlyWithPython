@@ -1,5 +1,7 @@
 # FlyWithPython - New Python Interface for X-Plane
 
+[![Join the chat at https://gitter.im/stormrose-va/FlyWithPython](https://badges.gitter.im/stormrose-va/FlyWithPython.svg)](https://gitter.im/stormrose-va/FlyWithPython?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This project repository contains all code of FlyWithPython, a new Python
 Interface for [X-Plane](http://x-plane.com). This project aims at providing a
 successor for the well-known but abandoned
