@@ -28,7 +28,7 @@ Before filling the form and pressing on send, please take a few seconds and
   (ours and yours) and slows down resolution of the issue, so being as
   comprehensive as possible is a good deal for all involved parties :+1:
 * take a quick look at our
-  [documentation on issue management](https://flywithpython.readthedocs.io/internals/issues.html).
+  [documentation on issue management](https://flywithpython.readthedocs.io/en/latest/internals/issues.html).
   It's not that long to read, but
   should give you a basic understanding of issue labels and how we work with
   issues :rocket:
