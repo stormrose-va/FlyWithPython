@@ -18,5 +18,4 @@ Indices, glossary and tables
 ----------------------------
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :doc:`glossary`
