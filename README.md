@@ -19,10 +19,10 @@ project:
 * **Python 3 Compatibility:** The latest published legacy Python interface only
   works with a quite dated version of the Python 2.7 branch. FlyWithPython is
   designed to bring the latest Python 3 to X-Plane.
-* **Improved Encapsulation:** With the legacy interface, all scripts used the
-  same runtime environment, sometimes creating conflicts for third-party
-  dependencies. FlyWithPython offers the ability to use dedicated virtual
-  environments for each script, resolving this problem.
+* **Improved Encapsulation:** The legacy interface relied on a system-wide
+  installed Python interpreter, sometimes creating conflicts with third-party
+  dependencies or simply version mayhem. FlyWithPython bundles a dedicated
+  Python interpreter to avoid such problems.
 
 
 ## FAQ
@@ -36,10 +36,13 @@ also the Python code itself will need some love & care before it can run on
 FlyWithPython.
 
 #### Will you provide an installer bundle?
-That is not yet decided. We seek at providing a stable release first before
-thinking about any bundling (that would require some careful studying of
-licenses not only of Python itself, but of all other 3rd party stuff included to
-prevent us from being sued for distributing stuff we were not allowed to do so).
+We hope there won't be a need for complex installer bundles. We seek at creating
+a traditional plugin package which won't need any third party packages to be
+installed on your computer. However, our first priority is providing a stable
+release before thinking about any bundling (that would require some careful
+studying of licenses not only of Python itself, but of all other 3rd party stuff
+included to prevent us from being sued for distributing stuff we were not
+allowed to).
 
 #### Will you support all three OSes X-Plane runs on?
 That is certainly one of our objectives, but this will depend on whether we can
@@ -49,16 +52,11 @@ number of flavours, coming all with different versions of the Python
 interpreter.
 
 #### Will X-Plane 11 be supported?
-Indeed, FlyWithPython is being develped mainly for X-Plane 11. Concerning
-X-Plane 10 compatibility, we currently don't see massive obstacles that would
-prevent us from maintaining also an X-Plane 10 compatible version. This may
-however change at some point in the future, should the X-Plane API and SDK
-change significantly.
+Indeed, FlyWithPython is being develped only for X-Plane 11.10 and later
+versions. This project uses the most recent API SDK (version 3.0) and thus is
+not compatbile with older X-Plane versions.
 
 #### When will it be ready?
 For the time being, we cannot tell. FlyWithPython is being developed by
 volunteers in their leisure time, so the resources we can dedicate to this
-project are limited. On top of that, the main target platform for FlyWithPython
-is X-Plane 11. So don't expect a too soon release, as we will have to wait for
-XP11 becoming a final release before we can think about finishing our work on
-FlyWithPython.
+project are limited.
