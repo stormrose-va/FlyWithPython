@@ -3,6 +3,8 @@
 
 [![Documentation Status](https://readthedocs.org/projects/flywithpython/badge/?version=latest)](https://flywithpython.readthedocs.io/?badge=latest)
 [![Join the chat at https://gitter.im/stormrose-va/FlyWithPython](https://badges.gitter.im/stormrose-va/FlyWithPython.svg)](https://gitter.im/stormrose-va/FlyWithPython?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7d7ee69462e3608b2182/maintainability)](https://codeclimate.com/github/stormrose-va/FlyWithPython/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/7d7ee69462e3608b2182/test_coverage)](https://codeclimate.com/github/stormrose-va/FlyWithPython/test_coverage)
 
 This project repository contains all code of FlyWithPython, a new Python
 Interface for [X-Plane](http://x-plane.com). This project aims at providing a
